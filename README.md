@@ -14,13 +14,13 @@ This is a React Student Portal App Project created using React + React Router an
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/fedexid/student-portal
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd student-portal
 ```
 
 Install dependencies
@@ -43,7 +43,7 @@ Start the App
 
 ## Screenshots
 
-## ![Student Portal Landing Page](./src/assets/LandingPage.png)
+![Student Portal Landing Page](./src/assets/LandingPage.png)
 
 ---
 
