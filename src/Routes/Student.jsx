@@ -66,7 +66,7 @@ const Student = () => {
               id="filter"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="bg-tertiary text-textPrimary my-2 w-full max-w-screen-md appearance-none rounded-lg px-4 py-2 lg:max-w-full"
+              className="my-2 w-full max-w-screen-md appearance-none rounded-lg bg-tertiary px-4 py-2 text-textPrimary lg:max-w-full"
             >
               <option value="All">All</option>
               <option value="Fakultas Ekonomi">Fakultas Ekonomi</option>
@@ -79,7 +79,7 @@ const Student = () => {
               </option>
             </select>
 
-            <table className="text-textPrimary table-auto overflow-x-scroll bg-slate-900">
+            <table className="table-auto overflow-x-scroll bg-slate-900 text-textPrimary">
               <thead>
                 <tr>
                   <th className="border border-slate-600 py-2 text-center">
