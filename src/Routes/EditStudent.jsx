@@ -18,28 +18,27 @@ const EditStudent = () => {
 
   let navigate = useNavigate();
 
-  const fetchEdit = async () => {
-    try {
-      const response = await fetch(`http://localhost:8000/student/${id}`);
-      if (!response.ok) {
-        throw new Error("Error Occured");
-      }
-
-      const data = await response.json();
-      setLoading(false);
-      setName(data.fullname);
-      setProfilePicture(data.profilePicture);
-      setAddress(data.address);
-      setPhoneNumber(data.phoneNumber);
-      setBirthDate(data.birthDate);
-      setGender(data.gender);
-      setProgramStudy(data.programStudy);
-    } catch (err) {
-      setError(err);
-    }
-  };
-
   useEffect(() => {
+    const fetchEdit = async () => {
+      try {
+        const response = await fetch(`http://localhost:8000/student/${id}`);
+        if (!response.ok) {
+          throw new Error("Error Occured");
+        }
+
+        const data = await response.json();
+        setLoading(false);
+        setName(data.fullname);
+        setProfilePicture(data.profilePicture);
+        setAddress(data.address);
+        setPhoneNumber(data.phoneNumber);
+        setBirthDate(data.birthDate);
+        setGender(data.gender);
+        setProgramStudy(data.programStudy);
+      } catch (err) {
+        setError(err);
+      }
+    };
     fetchEdit();
   }, [id]);
 
@@ -113,13 +112,13 @@ const EditStudent = () => {
           />
 
           <form
-            className="text-primary mx-auto mt-2 w-10/12 max-w-md space-y-4 p-2 lg:my-2 lg:max-w-lg"
+            className="mx-auto mt-2 w-10/12 max-w-md space-y-4 p-2 text-primary lg:my-2 lg:max-w-lg"
             onSubmit={handleEdit}
           >
             <div>
               <label
                 htmlFor="full name"
-                className="text-textPrimary mb-1 block font-bold"
+                className="mb-1 block font-bold text-textPrimary"
               >
                 Full Name :
               </label>
@@ -134,7 +133,7 @@ const EditStudent = () => {
             <div>
               <label
                 htmlFor="address"
-                className="text-textPrimary mb-1 block font-bold"
+                className="mb-1 block font-bold text-textPrimary"
               >
                 Address:
               </label>
@@ -150,7 +149,7 @@ const EditStudent = () => {
             <div>
               <label
                 htmlFor="phone number"
-                className="text-textPrimary mb-1 block font-bold"
+                className="mb-1 block font-bold text-textPrimary"
               >
                 Phone Number:
               </label>
@@ -167,7 +166,7 @@ const EditStudent = () => {
               <div className="lg:mr-4 lg:grow">
                 <label
                   htmlFor="birth date"
-                  className="text-textPrimary mb-1 block font-bold"
+                  className="mb-1 block font-bold text-textPrimary"
                 >
                   Birth Date:
                 </label>
@@ -177,13 +176,13 @@ const EditStudent = () => {
                   id="birthDate"
                   value={birthDate}
                   onChange={(e) => setBirthDate(e.target.value)}
-                  className="text-primary w-full rounded outline-none focus:ring focus:ring-blue-600 lg:h-10 lg:p-2"
+                  className="w-full rounded text-primary outline-none focus:ring focus:ring-blue-600 lg:h-10 lg:p-2"
                 />
               </div>
               <div className="lg:grow">
                 <label
                   htmlFor="gender"
-                  className="text-textPrimary mb-1 block font-bold"
+                  className="mb-1 block font-bold text-textPrimary"
                 >
                   Gender :
                 </label>
@@ -193,7 +192,7 @@ const EditStudent = () => {
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
                   required
-                  className="text-primary w-full rounded outline-none focus:ring focus:ring-blue-600 lg:h-10 lg:p-2"
+                  className="w-full rounded text-primary outline-none focus:ring focus:ring-blue-600 lg:h-10 lg:p-2"
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -205,7 +204,7 @@ const EditStudent = () => {
             <div>
               <label
                 htmlFor="program study"
-                className="text-textPrimary mb-1 block font-bold"
+                className="mb-1 block font-bold text-textPrimary"
               >
                 Program Study :
               </label>
@@ -215,7 +214,7 @@ const EditStudent = () => {
                 value={programStudy}
                 onChange={(e) => setProgramStudy(e.target.value)}
                 required
-                className="text-primary w-full rounded lg:p-2"
+                className="w-full rounded text-primary lg:p-2"
               >
                 <option value="Ekonomi">Ekonomi</option>
                 <option value="Manajemen">Manajemen</option>
@@ -234,7 +233,7 @@ const EditStudent = () => {
             </div>
             <button
               type="submit"
-              className="text-textPrimary bg-tertiary w-full rounded-lg px-4 py-2 font-bold lg:py-4"
+              className="w-full rounded-lg bg-tertiary px-4 py-2 font-bold text-textPrimary lg:py-4"
             >
               Edit Student
             </button>

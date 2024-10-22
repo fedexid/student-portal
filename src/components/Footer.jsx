@@ -1,8 +1,6 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <footer className="text-textPrimary bg-tertiary py-4 text-center">
+    <footer className="bg-tertiary py-4 text-center text-textPrimary">
       <p>Student Portal | {new Date().getFullYear()} - Husein</p>
     </footer>
   );
